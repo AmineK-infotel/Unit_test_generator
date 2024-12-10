@@ -1,0 +1,61 @@
+Pour générer des tests unitaires pour chaque fonction définie dans le fichier Python, nous pouvons utiliser le framework de test unitaire `unittest`. Voici les tests unitaires pour chaque fonction :
+
+```python
+import unittest
+
+class TestMathFunctions(unittest.TestCase):
+
+    def test_addition(self):
+        self.assertEqual(addition(2, 3), 5)
+        self.assertEqual(addition(-1, 1), 0)
+        self.assertEqual(addition(0, 0), 0)
+
+    def test_factorielle(self):
+        self.assertEqual(factorielle(0), 1)
+        self.assertEqual(factorielle(1), 1)
+        self.assertEqual(factorielle(5), 120)
+        self.assertEqual(factorielle(10), 3628800)
+
+    def test_plus_grand(self):
+        self.assertEqual(plus_grand([1, 2, 3, 4, 5]), 5)
+        self.assertEqual(plus_grand([-1, -2, -3, -4, -5]), -1)
+        self.assertEqual(plus_grand([3, 3, 3, 3, 3]), 3)
+
+    def test_est_palindrome(self):
+        self.assertTrue(est_palindrome("racecar"))
+        self.assertTrue(est_palindrome("madam"))
+        self.assertFalse(est_palindrome("hello"))
+        self.assertTrue(est_palindrome("a"))
+
+    def test_somme_des_carres(self):
+        self.assertEqual(somme_des_carres([1, 2, 3]), 14)
+        self.assertEqual(somme_des_carres([4, 5, 6]), 61)
+        self.assertEqual(somme_des_carres([0, 0, 0]), 0)
+
+    def test_inverser_chaine(self):
+        self.assertEqual(inverser_chaine("racecar"), "racecar")
+        self.assertEqual(inverser_chaine("hello"), "olleh")
+        self.assertEqual(inverser_chaine("a"), "a")
+
+    def test_est_premier(self):
+        self.assertTrue(est_premier(2))
+        self.assertTrue(est_premier(3))
+        self.assertTrue(est_premier(5))
+        self.assertFalse(est_premier(4))
+        self.assertFalse(est_premier(9))
+
+    def test_fusionner_listes(self):
+        self.assertEqual(fusionner_listes([1, 2, 3], [3, 4, 5]), [1, 2, 3, 4, 5])
+        self.assertEqual(fusionner_listes([], [3, 4, 5]), [3, 4, 5])
+        self.assertEqual(fusionner_listes([1, 2, 3], []), [1, 2, 3])
+
+    def test_celsius_to_fahrenheit(self):
+        self.assertEqual(celsius_to_fahrenheit(0), 32)
+        self.assertEqual(celsius_to_fahrenheit(100), 212)
+        self.assertEqual(celsius_to_fahrenheit(-40), -40)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Ces tests unitaires couvrent les différentes fonctions et vérifient leurs comportements attendus avec divers cas de test. Vous pouvez exécuter ces tests en sauvegardant le code dans un fichier Python et en l'exécutant. Les résultats des tests vous indiqueront si toutes les fonctions fonctionnent comme prévu.
